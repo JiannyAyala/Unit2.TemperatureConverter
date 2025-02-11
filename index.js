@@ -1,26 +1,26 @@
-function ConvertToCelcius() {
-  let FarEnheight = -32,
-    Celcius = 0.5556;
-  return ConvertToCelcius;
+let userInput = prompt("Type a number", 45);
+
+function convertToCelcius(input) {
+  let farenheight = (input - 32) * (5 / 9);
+  return farenheight;
 }
-//ConvertToCelcius
-function DescribeTemperature() {
-  const DescribeTemperature = ConvertToCelcius(
-    window.prompt("Type a number", "")
-  );
-  let ConvertToCelcius = -32 * 0.5556;
-  if (ConvertToCelcius < 0) {
-    console.log("Very Cold");
-  } else if (ConvertToCelcius < 20) {
-    console.log("Cold");
-  } else if (ConvertToCelcius < 30) {
-    console.log("Warm");
-  } else if (ConvertToCelcius < 40) {
-    console.log("hot");
-  } else if (ConvertToCelcius >= 40) {
-    console.log("very hot");
+
+function describeTemperature(userFinput) {
+  let tempInput = convertToCelcius(userFinput);
+  if (tempInput < 0) {
+    return "Very Cold";
+  } else if (tempInput < 20) {
+    return "Cold";
+  } else if (tempInput < 30) {
+    return "Warm";
+  } else if (tempInput < 40) {
+    return "hot";
+  } else if (tempInput >= 40) {
+    return "very hot";
   }
 }
-//DescribeTemperature
-/* Having a bit of any issue with 'Prompt' on where exactly
-I should place it in the code and what to write*/
+
+let results = describeTemperature(userInput);
+let celcius = convertToCelcius(userInput);
+
+alert(results + "I mean look at the Temp! it's" + " " + celcius);
